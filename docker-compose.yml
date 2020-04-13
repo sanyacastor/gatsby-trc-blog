@@ -1,0 +1,18 @@
+services:
+  gatsby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    entrypoint: gatsby
+    volumes:
+      - .:/app
+
+  develop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: gatsby develop -H 0.0.0.0
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app

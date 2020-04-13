@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+$main-font: 'M PLUS 1p', sans-serif;
+$pair_font: 'Playfair Display', serif;
+
+.uses-list__search-wrapper {
+    position: relative;
+    padding: .5em 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    width: 100%;
+    // &:before {
+    //     z-index: 2;
+    //     content:"";
+    //     position: absolute;
+    //     top: 0;
+    //     left: 1.5em;
+    //     margin-top: .5em;
+    //     background: white;
+    //     width: 5em;
+    //     height: 80%;
+    //     border-bottom-left-radius: 5em;
+    //     border-top-left-radius: 5em;
+    // }
+    &:after {
+        content:"🔎";
+        z-index: 99;
+        position: absolute;
+        top: 35%;
+        left: 3em;
+    }
+}
+
+.uses-list__search-input {
+    font-family: $main-font;
+    text-transform: uppercase;
+    padding: 0.5em;
+    outline: none;
+    border-radius: 5em;
+    font-size: 2em;
+    background: transparent;
+    width: 100%;
+    color:orange;
+    border: 1px solid orange;
+    padding-left: 2em;
+}
+
+.user-list {
+    margin-left: 0;
+    list-style: none;
+
+
+    &__item {
+        font-family: $main-font;
+        text-transform: uppercase;
+        padding: .5em 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: orange;
+        line-height: 1.3;
+        font-size: 1.5em;
+        border-top: 1px solid orange;
+        margin-bottom: 0;
+
+        &:hover {
+            background: white;
+            color: blue;
+        }
+    }
+    &__num {
+        font-weight: 700;
+        font-size: 2.4em;
+        padding-right: .5em;
+        min-width: 2.2em;
+    }
+
+    &__city {
+        font-weight: 300;
+    }
+
+    &__score {
+        font-weight: 700;
+        font-size: 2em;
+    }
+}
+
+
+.user-list__user {
+    margin-right: auto;
+}
+
+.block-post__header-date {
+    margin-top: 0.5em;
+}
+
+.block-post__header-lead {
+    width: 50%;
+}
+
+.container--blog {
+    font-family: $main-font;
+    line-height: 130%;
+    font-size: 1.3em;
+    padding: 0 1.5em;
+}
+
+.container--blog .p,
+.container--blog .q{
+    background: white;
+    // padding: 2em;
+    position: relative;
+    margin-left: auto;
+    width: 50%;
+    // margin-bottom: 10em;
+}
+
+.block-post__header-text {
+    width: 50%;
+}
+
+.block-post__header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    border-top: 1px solid black;
+    &-text {
+        margin-top: .5em;
+    }
+}
+
