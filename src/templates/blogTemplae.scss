@@ -1,0 +1,52 @@
+
+$main-font: 'Fira Sans', sans-serif;
+$pair_font: 'Playfair Display', serif;
+$color-orange: #FC6C11;
+
+.block-post__header-date {
+    display: block;
+    margin-top: auto;
+}
+
+.block-post__header-lead {
+    width: 50%;
+}
+
+.container--blog {
+    font-family: $main-font;
+    line-height: 130%;
+    font-size: 1.3em;
+    padding: 0 1.5em;
+}
+
+
+.block-post__header-title {
+    margin-top: 0;
+    font-size: 2em;
+
+}
+
+.block-post__header-text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.block-post__header-image {
+    width: 50%;
+}
+
+.block-post__header-image img {
+    margin: 0;
+}
+
+.block-post__header {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+    border-bottom: 1px solid $color-orange;
+    &-text {
+        margin-top: .5em;
+    }
+}

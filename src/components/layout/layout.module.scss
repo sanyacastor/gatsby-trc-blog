@@ -1,15 +1,23 @@
-$color-orange: white;
+:root {
+  --color-orange: #FC6C11;
+  --color-green: #1E3B34;
+}
+
 
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+
 body {
   margin: 0;
+  background: var(--color-green);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: var(--color-green);
 }
+
 article,
 aside,
 details,
@@ -87,6 +95,7 @@ sup {
   top: -0.5em;
 }
 img {
+  width: 100%;
   border-style: none;
 }
 svg:not(:root) {
@@ -201,7 +210,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: var(--color-orange);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -645,14 +654,4 @@ footer {
   html {
     font-size: 6px;
   }
-}
-
-
-
-
-
-
-
-main {
-  // margin-left: 3.5em;
 }

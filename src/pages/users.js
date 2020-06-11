@@ -49,7 +49,7 @@ function Users() {
  
   React.useEffect(() => {
     getUsers()
-  }, [])
+  })
 
     function changeHandler(e) {
         setSearch(e.target.value)
@@ -73,32 +73,35 @@ function Users() {
 return <Layout>
           <SEO title="Участники" />
             <section className="users">
-              <div className="container"> 
                 { loading
                     ? <Loader/> 
                     :<>
-                    <div className="uses-list__search-wrapper">
-                      <label className="uses-list__search">
-                          <input type="text" className="uses-list__search-input" onChange={(e)=>changeHandler(e)}/>
-                      </label>
+                    <div className="uses-list__search-wrapper ">
+                        <label className="uses-list__search user-list__inner">
+                            <input type="text" className="uses-list__search-input" onChange={(e)=>changeHandler(e)}/>
+                        </label>
                     </div>
                     <ul className="user-list" >{filteredList(users).map(user=>
                       <motion.li 
                         layoutTransition={spring} 
                         key={user.name} 
                         className="user-list__item">
-                          <span className="user-list__num">{user.num}</span>
-                          <span className="user-list__user">
-                            <span className="user-list__name">{user.name}</span><br/>
-                            <span className="user-list__city">{user.city}</span>
-                          </span>
-                          <span className="user-list__score">{user.score}</span>
+                          <div className="user-list__inner"> 
+                            <span className="user-list__num">{user.num}</span>
+                            <span className="user-list__user">
+                              <span className="user-list__name">{user.name}</span><br/>
+                              <span className="user-list__city">{user.city}</span>
+                            </span>
+                            <span className="user-list__score">{user.score}</span>
+                            {user.Races 
+                            ? user.Races.map(r => <div className="user-list__races">{r.City} <span className="user-list__place">{r.Place}</span> +{r.Score}</div> )
+                              : null}
+                          </div> 
                       </motion.li>
                         )}
                     </ul>
                     </>
                     }
-              </div>
             </section>
         </Layout>
 

@@ -1,28 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=M+PLUS+1p:400,700,900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;800&family=Playfair+Display:wght@400;600;800&display=swap');
 
-$main-font: 'M PLUS 1p', sans-serif;
+$main-font: 'Fira Sans', sans-serif;
 $pair_font: 'Playfair Display', serif;
+$color-orange: #FC6C11;
+
+*::selection {
+    background: orangered;
+    color: white;
+}
+
 
 .uses-list__search-wrapper {
     position: relative;
-    padding: .5em 1.5em;
+    padding: .5em;
+    font-size: 1em;
     margin-bottom: 1em;
     margin-top: 1em;
     width: 100%;
-    // &:before {
-    //     z-index: 2;
-    //     content:"";
-    //     position: absolute;
-    //     top: 0;
-    //     left: 1.5em;
-    //     margin-top: .5em;
-    //     background: white;
-    //     width: 5em;
-    //     height: 80%;
-    //     border-bottom-left-radius: 5em;
-    //     border-top-left-radius: 5em;
-    // }
+
     &:after {
         content:"🔎";
         z-index: 99;
@@ -38,52 +34,90 @@ $pair_font: 'Playfair Display', serif;
     padding: 0.5em;
     outline: none;
     border-radius: 5em;
-    font-size: 2em;
+    font-size: 1em;
     background: transparent;
     width: 100%;
-    color:orange;
-    border: 1px solid orange;
+    color:$color-orange;
+    border: 1px solid $color-orange;
     padding-left: 2em;
 }
 
 .user-list {
     margin-left: 0;
     list-style: none;
-
+   
 
     &__item {
+        // border-top: 1px solid $color-orange;
+        // background: rgb(223, 109, 3);
+        margin-bottom: 0;
+    }
+    &__inner {
+        max-width: 1000px;
+        margin: 0 auto;
         font-family: $main-font;
         text-transform: uppercase;
         padding: .5em 1em;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        color: orange;
+        color: $color-orange;
         line-height: 1.3;
         font-size: 1.5em;
-        border-top: 1px solid orange;
-        margin-bottom: 0;
-
-        &:hover {
-            background: white;
-            color: blue;
-        }
     }
+
+    &__name {
+        font-weight: 600;
+    }
+
     &__num {
-        font-weight: 700;
+        text-align: center;
+        border: 2px solid $color-orange;
+        font-weight: 400;
         font-size: 2.4em;
-        padding-right: .5em;
-        min-width: 2.2em;
+        min-width: 2em;
+        padding: .1em;
+        margin-right: .3em;
+        margin-bottom: .3em;
+        border-radius: 50%;
     }
 
-    &__city {
-        font-weight: 300;
+    &__place {
+        text-align: center;
+        min-width: 1.5em;
+        min-height: 1.5em;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 0 .3em;
+        padding: 0 .4em;
     }
 
     &__score {
-        font-weight: 700;
-        font-size: 2em;
+        font-weight: 600;
+        font-size: 2.6em;
     }
+
+    &__races {
+        border-top: 1px solid $color-orange;
+        width: 100%;
+        align-items: flex-start;
+        justify-content: end;
+        // border-top: 1px solid $color-orange;
+        padding: .5em 0;
+        font-size: 1rem;
+        color: $color-orange;
+        transition: all .2s ease-in;
+        display: flex;
+
+        &:last-child {
+            border-bottom: 1px solid $color-orange;
+        }
+    }
+}
+
+.user-list__item:hover .user-list__races  {
+    display: flex;
 }
 
 
@@ -91,42 +125,14 @@ $pair_font: 'Playfair Display', serif;
     margin-right: auto;
 }
 
-.block-post__header-date {
-    margin-top: 0.5em;
-}
-
-.block-post__header-lead {
-    width: 50%;
-}
-
-.container--blog {
+.container__wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
     font-family: $main-font;
-    line-height: 130%;
-    font-size: 1.3em;
-    padding: 0 1.5em;
-}
-
-.container--blog .p,
-.container--blog .q{
-    background: white;
-    // padding: 2em;
-    position: relative;
-    margin-left: auto;
-    width: 50%;
-    // margin-bottom: 10em;
-}
-
-.block-post__header-text {
-    width: 50%;
-}
-
-.block-post__header {
+    padding: .5em 1em;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 2em;
-    border-top: 1px solid black;
-    &-text {
-        margin-top: .5em;
-    }
+    align-items: center;
+    color: $color-orange;
 }
-
